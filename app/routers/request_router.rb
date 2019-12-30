@@ -1,6 +1,8 @@
 require 'sinatra'
 require 'json'
 require 'pry'
+require './app/responses/launch_response'
+require './app/handlers/intent_request_handler'
 
 class RequestRouter
   attr_reader :json_response
