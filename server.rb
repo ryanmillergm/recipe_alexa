@@ -2,10 +2,9 @@ require 'sinatra'
 require 'json'
 require 'net/http'
 require 'pry'
-require './routers/request_router'
+require './app/routers/request_router'
 
 post '/' do
-  p request.body.read
   launch_response = RequestRouter.new(JSON.parse(request.body.read))
   launch_response.format_response
   # number = JSON.parse(request.body.read)["request"]["intent"]["slots"]["value"]
