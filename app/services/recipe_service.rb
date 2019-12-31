@@ -14,8 +14,7 @@ class RecipeService
     JSON.parse(response.body, symbolize_names: true)
   end
 
-  def recipes(food)
-    binding.pry
-    parsed_response(conn.get("/api/v1/recipes"))
+  def find_recipes(food)
+    parsed_response(conn.get("/api/v1/recipes/#{food.gsub(/[ ]/, '%20')}"))
   end
 end
