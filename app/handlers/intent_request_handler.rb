@@ -22,9 +22,9 @@ class IntentRequestHandler
   def route_intents
     if intent == "find_recipe"
       recipe_service = RecipeService.new
-      recipe_service.recipes(value)
-      binding.pry
-    #   message_formatter = MessageFormatter.new
+      # recipe_service.find_recipes(value)
+      message_formatter = MessageFormatter.new(recipe_service.find_recipes(value))
+      message_formatter.format_find_recipe_message
     # elsif intent == "recipe"
     #   recipe_service = RecipeService.new
     # elsif intent = "step"
