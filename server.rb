@@ -2,6 +2,7 @@ require 'sinatra'
 require 'json'
 require 'net/http'
 require 'pry'
+require 'active_support/core_ext/integer/inflections'
 require './app/routers/request_router'
 
 post '/' do
