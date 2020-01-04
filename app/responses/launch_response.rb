@@ -1,9 +1,26 @@
 require 'sinatra'
 require 'json'
 require 'pry'
+require 'watir'
+require "selenium-webdriver"
+
+use Rack::Session::Cookie, :key => 'rack.session',
+                           :path => '/',
+                           :secret => 'your_secret'
 
 class LaunchResponse
+  attr_reader :browser
+
+  def initialize(browser)
+    @browser = browser
+  end
+
+  def launch_recipe_friend
+    @browser.goto("localhost:3000")
+  end
+
   def render_response
+      launch_recipe_friend
         {
       "version": "1.0",
       "sessionAttributes": {
