@@ -2,12 +2,15 @@ require 'sinatra'
 require 'json'
 require 'pry'
 require 'active_support/core_ext/integer/inflections'
+require 'watir'
+require "selenium-webdriver"
 
 class MessageFormatter
-  attr_reader :message_data
+  attr_reader :message_data, :browser
 
-  def initialize(message_data)
+  def initialize(message_data, browser)
     @message_data = message_data
+    @browser = browser
   end
 
   def count_results
@@ -20,7 +23,12 @@ class MessageFormatter
     end
   end
 
+  def search_browser_for_recipe
+    @browser.goto("http://localhost:3000/recipes?utf8=%E2%9C%93&q=#{@message_data[:data].first[:attributes][:title]}&commit=Search+Recipes")
+  end
+
   def format_find_recipe_message
+    search_browser_for_recipe
     message = recipe_results
       {
       "version": "1.0",
