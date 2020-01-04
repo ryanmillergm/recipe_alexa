@@ -5,10 +5,11 @@ require './app/services/recipe_service'
 require './app/formatters/message_formatter'
 
 class IntentRequestHandler
-  attr_reader :json_response
+  attr_reader :json_response, :browser
 
-  def initialize(json_response)
+  def initialize(json_response, browser)
     @json_response = json_response
+    @browser = browser
   end
 
   def intent
@@ -23,7 +24,7 @@ class IntentRequestHandler
     if intent == "find_recipe"
       recipe_service = RecipeService.new
       # recipe_service.find_recipes(value)
-      message_formatter = MessageFormatter.new(recipe_service.find_recipes(value))
+      message_formatter = MessageFormatter.new(recipe_service.find_recipes(value), @browser)
       message_formatter.format_find_recipe_message
     # elsif intent == "recipe"
     #   recipe_service = RecipeService.new
