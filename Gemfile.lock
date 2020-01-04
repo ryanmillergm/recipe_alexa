@@ -1,22 +1,32 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    childprocess (3.0.0)
     mustermann (1.0.3)
     rack (2.0.7)
     rack-protection (2.0.7)
       rack
+    regexp_parser (1.6.0)
+    rubyzip (2.0.0)
+    selenium-webdriver (3.142.7)
+      childprocess (>= 0.5, < 4.0)
+      rubyzip (>= 1.2.2)
     sinatra (2.0.7)
       mustermann (~> 1.0)
       rack (~> 2.0)
       rack-protection (= 2.0.7)
       tilt (~> 2.0)
     tilt (2.0.10)
+    watir (6.16.5)
+      regexp_parser (~> 1.2)
+      selenium-webdriver (~> 3.6)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   sinatra
+  watir (~> 6.16, >= 6.16.5)
 
 BUNDLED WITH
    2.1.0.pre.3
