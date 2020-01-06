@@ -1,6 +1,11 @@
 # recipe_alexa
 
-This project is a microservice for Recipe Friend
+This project is a microservice for Recipe Friend. The Recipe Friend project can be found at https://github.com/ryanmillergm/recipe_friend. Recipe_alexa is a microservice that handles requests from a custom alexa skill and depending on the request, sends a request to the recipe friend api and responds back to alexa so users can use voice commands to find recipes. This microservice uses gnrok to tunnel request from alexa to recipe_alexa.
+
+# commands
+ - "Alexa, run recipe friend" - Awakes Alexa and opens the recipe friend website.
+ - "Alexa, find me a recipe for <recipe>" - Finds a recipe from the recipe friend site.
+
 The app is deployed at http://recipehound.km6rdxpp4h.us-west-2.elasticbeanstalk.com/.
 
 ## Schema
@@ -49,7 +54,7 @@ The app is deployed at http://recipehound.km6rdxpp4h.us-west-2.elasticbeanstalk.
  - Visit https://github.com/ryanmillergm/recipe_friend and click `New pull request`
  
 ## Current Iterations
- - Alexa skill set to read recipes
+ - Using Alexa to navigate recipe friend website.
 
 ## Known Issues
- - None
+ - Currently using Watir to open and navigate website. Needs permanent solution for navigation.
