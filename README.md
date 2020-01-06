@@ -1,6 +1,6 @@
 # recipe_alexa
 
-This project is a microservice for Recipe Friend. The Recipe Friend project can be found at https://github.com/ryanmillergm/recipe_friend. Recipe_alexa is a microservice that handles requests from a custom alexa skill and depending on the request, sends a request to the recipe friend api and responds back to alexa so users can use voice commands to find recipes. This microservice uses gnrok to tunnel request from alexa to recipe_alexa.
+This project is a microservice for Recipe Friend. The Recipe Friend project can be found at https://github.com/ryanmillergm/recipe_friend. Recipe_alexa is a microservice that handles requests from a custom alexa skill and depending on the request, sends a request to the recipe friend api and responds back to alexa so users can use voice commands to find recipes. This microservice uses ngrok to tunnel request from alexa to recipe_alexa.
 
 # commands
  - "Alexa, run recipe friend" - Awakes Alexa and opens the recipe friend website.
@@ -14,30 +14,25 @@ The app is deployed at http://recipehound.km6rdxpp4h.us-west-2.elasticbeanstalk.
 ## Tech Stack
  - Framework: Sinatra
  - Language: Ruby
- - Database: PostgreSQL v7.12.1
  - Testing: RSpec
 
 ## Other Packages
- - Figaro
+ - Ngrok
  - Faraday
- - Active Model Serializers v0.10.0
+ - Watir
+ - selenium-webdriver
 
 ## Local Setup
- - `$ git clone https://github.com/ryanmillergm/recipe_friend.git`
- - `$ cd recipe_friend`
+ - `$ git clone https://github.com/ryanmillergm/recipe_alexa.git`
+ - `$ cd recipe_alexa`
  - `$ bundle exec install`
- - `$ bundle exec rails db:create`
- - `$ bundle exec rails db:migrate`
- - `$ bundle exec rails db:seed`
- - `$ bundle exec figaro install`
 
 ## Additional steps
- -
+ - Sign up with ngrok. https://dashboard.ngrok.com/get-started
 
 ## Running the Server Locally
- - `$ rails s`
- - Access local endpoints at `http://localhost:3000/ToBeDetermined`
- - Access deployed endpoints at `https://somewhere.com`
+ - `$ ruby server.rb`
+ - `$ ./ngrok authtoken <your_ngrok_token`
 
 ## Running the Test Suite
  - `$ rspec`
