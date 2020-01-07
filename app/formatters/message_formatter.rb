@@ -25,6 +25,7 @@ class MessageFormatter
 
   def search_browser_for_recipe
     @browser.goto("http://localhost:3000/recipes?utf8=%E2%9C%93&q=#{@message_data[:data].first[:attributes][:title]}&commit=Search+Recipes")
+    # @browser.get "http://localhost:3000/recipes?utf8=%E2%9C%93&q=#{@message_data[:data].first[:attributes][:title]}&commit=Search+Recipes"
   end
 
   def format_find_recipe_message
