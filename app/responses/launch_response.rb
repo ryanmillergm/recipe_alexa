@@ -17,6 +17,7 @@ class LaunchResponse
 
   def launch_recipe_friend
     @browser.goto("localhost:3000")
+    # @browser.get "localhost:3000"
   end
 
   def render_response
