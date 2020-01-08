@@ -1,4 +1,6 @@
 require 'sinatra'
+require 'sinatra/activerecord'
+require './config/environments'
 require 'json'
 require 'net/http'
 require 'pry'
