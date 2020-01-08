@@ -8,7 +8,7 @@ require 'watir'
 require "selenium-webdriver"
 require 'active_support/core_ext/integer/inflections'
 require './app/routers/request_router'
-require './app/models/model'
+require './app/models/server'
 
 use Rack::Session::Cookie, :key => 'rack.session',
                            :path => '/',
