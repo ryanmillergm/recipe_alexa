@@ -21,6 +21,7 @@ The app is deployed at http://recipehound.km6rdxpp4h.us-west-2.elasticbeanstalk.
  - Faraday
  - Watir
  - selenium-webdriver
+ - Postgres
 
 ## Local Setup
  - `$ git clone https://github.com/ryanmillergm/recipe_alexa.git`
