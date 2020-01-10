@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2020_01_08_150151) do
 
   create_table "browsers", force: :cascade do |t|
     t.text "browser_session"
-    t.integer "session"
+    t.string "session"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
