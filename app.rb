@@ -20,5 +20,4 @@ post '/' do
 
   launch_response = RequestRouter.new(JSON.parse(request.body.read), @browser)
   launch_response.format_response
-
 end
