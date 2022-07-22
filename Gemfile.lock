@@ -40,7 +40,7 @@ GEM
       sinatra (>= 1.0)
     thread_safe (0.3.6)
     tilt (2.0.10)
-    tzinfo (1.2.6)
+    tzinfo (1.2.10)
       thread_safe (~> 0.1)
     watir (6.16.5)
       regexp_parser (~> 1.2)
